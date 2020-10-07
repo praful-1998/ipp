@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>gallery</title>
+	<link rel="stylesheet" href="style11.css">
+</head>
+<body>
+	<div class="container">
+		<div class="navbar">
+			<img src="images1/logo.png" class="logo">
+			<nav>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Office</a></li>
+					<li><a href="#">Hotels</a></li>
+					<li><a href="#">Contact us</a></li>
+				</ul>	
+			</nav>
+			<img src="images1/menu.png" class="menu-icon">	
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<div class="text-box">
+					<h5>Our products</h5>
+					<h1><b>Simplicity</b><br> is the <b>ultimate</b> sophistication</h1>
+				</div>
+			</div>
+			<img src="images1/circle.png" class="small-icon1">
+			<img src="images1/circle.png" class="small-icon2">
+			<img src="images1/square.png" class="small-icon3">
+
+			<div class="col">
+				<div class="gallery-box">
+					<img src="images1/pic2.jpg" id="gallery">
+
+					<ul>
+						<li class="btn">01</li>
+						<li class="btn active">02</li>
+						<li class="btn">03</li>
+						<li class="btn">04</li>
+					</ul>	
+
+				
+			</div>	
+		</div>	
+
+			<img src="images1/circle.png" class="small-icon4">
+			<img src="images1/square.png" class="small-icon5">
+
+
+
+
+	</div>
+
+	<script>
+		
+		var btn = document.getElementsByClassName("btn");
+		var gallery = document.getElementById("gallery");
+
+		var images = new Array(
+        "images1/pic1.jpg",
+        "images1/pic2.jpg",
+        "images1/pic3.jpg",
+        "images1/pic4.jpg",
+        );
+
+        for(let i=0; i<btn.length; i++){
+        	btn[i].onclick = function()
+        	 {
+        		gallery.src = images[i];
+        		let current =document.getElementsByClassName("active");
+        		current[0].className = current[0].className.replace("active","");
+        		this.className += "active";
+        	};
+        }
+    </script>
+
+</body>
+</html>
